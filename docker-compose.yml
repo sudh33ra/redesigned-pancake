@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  support-core:
+    build: core/.
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: support-core-db
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: testpass
+      WORDPRESS_DB_NAME: support-core
+    volumes:
+      - ./core/wordpress:/var/www/html
+
+  support-core-db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: support-core
+      MYSQL_USER: wpdbuser
+      MYSQL_PASSWORD: testpass
+      MYSQL_ROOT_PASSWORD: testpass
+    volumes:
+      - ./db/data:/var/lib/mysql

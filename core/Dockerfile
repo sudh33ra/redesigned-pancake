@@ -1,1 +1,1 @@
-FROM wordpress:php7,2
+FROM wordpress:php7.2
