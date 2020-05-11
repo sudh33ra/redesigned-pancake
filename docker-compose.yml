@@ -13,6 +13,8 @@ services:
       WORDPRESS_DB_NAME: support_db
     volumes:
       - ./core/site:/var/www/html
+    depends_on:
+      - "support-core-db"
 
   support-core-db:
     image: mariadb:5.5.56
