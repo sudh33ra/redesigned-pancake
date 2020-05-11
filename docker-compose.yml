@@ -25,6 +25,7 @@ services:
       MYSQL_ROOT_PASSWORD: example
     volumes:
       - ./db/data:/var/lib/mysql
+      - ./db/support_db-clean.sql:/docker-entrypoint-initdb.d/run.sql
 
   db-admin:
     image: phpmyadmin/phpmyadmin:latest
