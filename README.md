@@ -6,6 +6,10 @@ Ticketing system running on docker
 Username : demo   
 Password : demo   
 
+### Customer
+Username : demo-user   
+Password : demo   
+
 ### Desk Admin   
 Username : demoadmin   
 Password : demo   
